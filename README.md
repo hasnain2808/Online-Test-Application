@@ -1,5 +1,3 @@
-# Online-Test-Application
-
 # **Online Test Application**
 
 **Introduction**
@@ -25,19 +23,19 @@ The Dao classes were used to handle data manipulations one per Entity. The contr
 
 **The Quiz component** uses radio buttons to display the Answers. The questions are displayed besides them.
 
-![](RackMultipart20200714-4-18q4uwc_html_f521180c84972782.png)
+![](images/quiz.png)
 
 **The Result component** is directly called when the quiz is submitted and it shows the responses and the current answers side by side. Total Marks are displayed at the bottom
 
-![](RackMultipart20200714-4-18q4uwc_html_b1df1fc9417ecc45.png)
+![](images/Resultafterquiz.png)
 
 All the attempts can be seen clicking on the **Review** button
 
-![](RackMultipart20200714-4-18q4uwc_html_764cdeaf8d54c594.png)
+![](images/review.png)
 
 The **check Result button** loads the responses of a specific users and shows on the Result screen
 
-![](RackMultipart20200714-4-18q4uwc_html_2fccc88c51a41a15.png)
+![](images/oldresultfromreview.png)
 
 The textboxes and Radio buttons on the Result screen is disabled to avoid confusion
 
