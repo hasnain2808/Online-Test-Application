@@ -1,0 +1,11 @@
+package com.project.quiz.model;
+
+public class ResUserQuesAns {
+
+	private int UserId;
+	private int QuesId[];
+	private int AnsId[];
+	
+	
+	
+}

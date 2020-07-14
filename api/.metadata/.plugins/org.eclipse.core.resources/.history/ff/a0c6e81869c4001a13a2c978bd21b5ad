@@ -1,0 +1,57 @@
+package com.project.quiz.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table
+public class AnswerOption {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	private String answer;
+	@ManyToOne
+	private Question question;
+
+	public AnswerOption(int id, String answer, Question question) {
+		super();
+		this.id = id;
+		this.answer = answer;
+		this.question = question;
+	}
+
+	public AnswerOption() {
+		super();
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getAnswer() {
+		return answer;
+	}
+
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
+
+	public Question getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(Question question) {
+		this.question = question;
+	}
+
+}

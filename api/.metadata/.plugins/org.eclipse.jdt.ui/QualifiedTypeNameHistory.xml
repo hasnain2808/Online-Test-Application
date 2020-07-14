@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+<fullyQualifiedTypeName name="springfox.documentation.spring.web.plugins.Docket"/>
+<fullyQualifiedTypeName name="springfox.documentation.spi.DocumentationType"/>
+<fullyQualifiedTypeName name="springfox.documentation.builders.RequestHandlerSelectors"/>
+<fullyQualifiedTypeName name="springfox.documentation.swagger2.annotations.EnableSwagger2"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+<fullyQualifiedTypeName name="com.project.quiz.exception.BusinessException"/>
+<fullyQualifiedTypeName name="com.project.quiz.service.QuizService"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+<fullyQualifiedTypeName name="javax.persistence.OneToOne"/>
+<fullyQualifiedTypeName name="org.springframework.boot.CommandLineRunner"/>
+<fullyQualifiedTypeName name="com.project.quiz.dao.QuestionDAO"/>
+<fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
+<fullyQualifiedTypeName name="com.project.quiz.dao.AnswerOptionDAO"/>
+<fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+<fullyQualifiedTypeName name="javax.persistence.FetchType"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.project.quiz.model.Question"/>
+<fullyQualifiedTypeName name="org.springframework.http.ResponseEntity"/>
+<fullyQualifiedTypeName name="org.springframework.util.MultiValueMap"/>
+<fullyQualifiedTypeName name="org.springframework.util.LinkedMultiValueMap"/>
+<fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonManagedReference"/>
+<fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="com.project.quiz.model.AnswerOption"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+</qualifiedTypeNameHistroy>

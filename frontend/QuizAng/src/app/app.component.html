@@ -1,0 +1,48 @@
+<style>
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(224, 71, 71);
+    top: 0;
+  }
+
+  li {
+    float: left;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 30px;
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color: blueviolet;
+  }
+</style>
+
+<div align="center">
+  <h2>Welcome to {{title}} CRUD App</h2>
+</div>
+<br />
+<br />
+<div>
+  <ul>
+    <li>
+      <a routerLink="/Quiz">Quiz</a>
+    </li>
+
+    <li>
+      <a routerLink="/Review">Review</a>
+    </li>
+  </ul>
+</div>
+<br />
+<br />
+<div align="center">
+  <router-outlet></router-outlet>
+</div>

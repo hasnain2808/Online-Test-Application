@@ -1,0 +1,35 @@
+<div>
+    <h3><u>Review</u></h3>
+
+    Name: <input type="text" [ngModel]=userresponse.name readonly>
+    <table border="1px" style=" border-collapse: collapse;   border: 1px solid black;">
+        <tr>
+            <td>Id</td>
+            <td>question</td>
+            <td colspan="3">Answer </td>
+        </tr>
+        <tr *ngFor="let questionw of userresponse.response">
+            <td>{{questionw.question.id}}</td>
+            <td>{{questionw.question.question}}</td>
+            <td>
+                <table>
+                    <tr>
+                        <td>Chosen Answer</td>
+                        <td>Correct Answer</td>
+                    </tr>
+                    <tr *ngFor="let ans of questionw.question.answerOption">
+
+                        <td><input type="radio" name={{questionw.id}}
+                                [checked]=" ans!=null ?   ans.id == questionw.answerResponse.id : false"
+                                [disabled]=" ! (ans!=null ?   ans.id == questionw.answerResponse.id : false)">{{ans.answer}}
+                        </td>
+                        <td><input type="radio" [checked]="ans.correctAnswer" [disabled]="!ans.correctAnswer"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>Total Marks = {{marks}}</td>
+        </tr>
+    </table>
+</div>

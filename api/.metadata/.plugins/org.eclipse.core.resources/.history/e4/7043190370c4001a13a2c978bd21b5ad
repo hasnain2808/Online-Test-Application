@@ -1,0 +1,82 @@
+package com.project.quiz.inititializer;
+
+import java.util.List;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import com.project.quiz.dao.AnswerOptionDAO;
+import com.project.quiz.dao.QuestionDAO;
+import com.project.quiz.model.AnswerOption;
+import com.project.quiz.model.Question;
+
+@Component
+public class QuestionAnswerInitializer implements CommandLineRunner {
+	private QuestionDAO questiondao;
+	private AnswerOptionDAO answeroptiondao;
+	private AnswerOption answerOption;
+	private Question question;
+	private List<Question> questionList;
+
+	public QuestionAnswerInitializer(QuestionDAO questiondao, AnswerOptionDAO answeroptiondao) {
+		super();
+		this.questiondao = questiondao;
+		this.answeroptiondao = answeroptiondao;
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		question = new Question("What is the single responsibility principle");
+		questiondao.save(question);
+		answerOption = new AnswerOption("A module should be responsible to one, and only one, actor.", question, true);
+		answeroptiondao.save(answerOption);
+		answerOption = new AnswerOption("A module should be responsible to two  actor.", question, false);
+		answeroptiondao.save(answerOption);
+		answerOption = new AnswerOption("A module should be responsible to three actor.", question, false);
+		answeroptiondao.save(answerOption);
+		answerOption = new AnswerOption("Two modules should be responsible one actor.", question, false);
+		answeroptiondao.save(answerOption);
+		questionList = questiondao.findAll();
+		questionList.forEach(questionI -> System.out.println(questionI));
+
+		question = new Question("What is open closed principle");
+		questiondao.save(question);
+		answerOption = new AnswerOption("Protects higher-level components from changes in lower-level components.", question, true);
+		answeroptiondao.save(answerOption);
+		answerOption = new AnswerOption("A module should be responsible to two  actor.", question, false);
+		answeroptiondao.save(answerOption);
+		answerOption = new AnswerOption("A module should be responsible to three actor.", question, false);
+		answeroptiondao.save(answerOption);
+		answerOption = new AnswerOption("Two modules should be responsible one actor.", question, false);
+		answeroptiondao.save(answerOption);
+		questionList = questiondao.findAll();
+		questionList.forEach(questionI -> System.out.println(questionI));
+
+		question = new Question("What is the single responsibility principle");
+		questiondao.save(question);
+		answerOption = new AnswerOption("A module should be responsible to one, and only one, actor.", question, true);
+		answeroptiondao.save(answerOption);
+		answerOption = new AnswerOption("A module should be responsible to two  actor.", question, false);
+		answeroptiondao.save(answerOption);
+		answerOption = new AnswerOption("A module should be responsible to three actor.", question, false);
+		answeroptiondao.save(answerOption);
+		answerOption = new AnswerOption("Two modules should be responsible one actor.", question, false);
+		answeroptiondao.save(answerOption);
+		questionList = questiondao.findAll();
+		questionList.forEach(questionI -> System.out.println(questionI));
+
+		question = new Question("What is the single responsibility principle");
+		questiondao.save(question);
+		answerOption = new AnswerOption("A module should be responsible to one, and only one, actor.", question, true);
+		answeroptiondao.save(answerOption);
+		answerOption = new AnswerOption("A module should be responsible to two  actor.", question, false);
+		answeroptiondao.save(answerOption);
+		answerOption = new AnswerOption("A module should be responsible to three actor.", question, false);
+		answeroptiondao.save(answerOption);
+		answerOption = new AnswerOption("Two modules should be responsible one actor.", question, false);
+		answeroptiondao.save(answerOption);
+		questionList = questiondao.findAll();
+		questionList.forEach(questionI -> System.out.println(questionI));
+
+	}
+}

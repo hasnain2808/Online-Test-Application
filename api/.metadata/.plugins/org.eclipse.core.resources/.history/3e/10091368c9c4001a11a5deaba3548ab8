@@ -1,0 +1,41 @@
+package com.project.quiz.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.project.quiz.dao.QuestionDAO;
+import com.project.quiz.model.AnswerOption;
+import com.project.quiz.model.Question;
+import com.project.quiz.service.QuizService;
+
+@Service
+public class QuizServiceImpl implements QuizService {
+	@Autowired
+	private QuestionDAO dao;
+	public List<Question> getAllQuestions() {
+		List<Question> questionList = dao.findAll();
+		questionList.forEach(questionI -> System.out.println(questionI));
+		return dao.findAll();
+	}
+	
+	private AnswerOption findTrueAnswer(List<AnswerOption> answerOptionList) {
+		Customer james = customers.stream()
+				  .filter(customer -> "James".equals(customer.getName()))
+				  .findAny()
+				  .orElse(null);		return null;
+		
+	}
+	
+	@Override
+	public Integer getMarks(List<Question> questionList) {
+		int totalMarks = 0;
+		for(Question questionResponse:questionList) {
+			AnswerOption chosenAnswer = findTrueAnswer(questionResponse.getAnswerOption());
+			List<AnswerOption> answerOption = dao.findById(questionResponse.getId()).get().getAnswerOption();
+			
+		}
+		return null;
+	}
+}

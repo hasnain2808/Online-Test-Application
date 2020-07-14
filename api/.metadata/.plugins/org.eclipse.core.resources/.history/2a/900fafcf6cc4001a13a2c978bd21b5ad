@@ -1,0 +1,126 @@
+package com.project.quiz.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table
+public class AnswerOption {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	private String answer;
+	@ManyToOne
+	private Question question;
+	private boolean isAnswer;
+
+	public AnswerOption(int id, String answer, Question question) {
+		super();
+		this.id = id;
+		this.answer = answer;
+		this.question = question;
+	}
+
+	public AnswerOption(String answer, Question question, boolean isAnswer) {
+		super();
+		this.answer = answer;
+		this.question = question;
+		this.isAnswer = isAnswer;
+	}
+
+	@Override
+	public String toString() {
+		return "AnswerOption [id=" + id + ", answer=" + answer + ", question=" + question + ", isAnswer=" + isAnswer
+				+ ", hashCode()=" + hashCode() + ", isAnswer()=" + isAnswer() + ", getId()=" + getId()
+				+ ", getAnswer()=" + getAnswer() + ", getQuestion()=" + getQuestion() + ", getClass()=" + getClass()
+				+ ", toString()=" + super.toString() + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((answer == null) ? 0 : answer.hashCode());
+		result = prime * result + id;
+		result = prime * result + (isAnswer ? 1231 : 1237);
+		result = prime * result + ((question == null) ? 0 : question.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		AnswerOption other = (AnswerOption) obj;
+		if (answer == null) {
+			if (other.answer != null)
+				return false;
+		} else if (!answer.equals(other.answer))
+			return false;
+		if (id != other.id)
+			return false;
+		if (isAnswer != other.isAnswer)
+			return false;
+		if (question == null) {
+			if (other.question != null)
+				return false;
+		} else if (!question.equals(other.question))
+			return false;
+		return true;
+	}
+
+	public AnswerOption(int id, String answer, Question question, boolean isAnswer) {
+		super();
+		this.id = id;
+		this.answer = answer;
+		this.question = question;
+		this.isAnswer = isAnswer;
+	}
+
+	public boolean isAnswer() {
+		return isAnswer;
+	}
+
+	public void setAnswer(boolean isAnswer) {
+		this.isAnswer = isAnswer;
+	}
+
+	public AnswerOption() {
+		super();
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getAnswer() {
+		return answer;
+	}
+
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
+
+	public Question getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(Question question) {
+		this.question = question;
+	}
+
+}

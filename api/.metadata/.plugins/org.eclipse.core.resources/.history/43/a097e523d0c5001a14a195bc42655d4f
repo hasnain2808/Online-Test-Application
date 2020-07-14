@@ -1,0 +1,9 @@
+package com.project.quiz.service;
+
+
+import com.project.quiz.model.User;
+
+public interface RevService {
+
+public List<User> getAllUsers();
+}

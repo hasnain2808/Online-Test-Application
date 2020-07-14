@@ -1,0 +1,19 @@
+<div>
+    <h3><u>User List</u></h3>
+    <table border="1px" style=" border-collapse: collapse;   border: 1px solid black;;">
+        <tr>
+            <td style="padding: 15px;">Id</td>
+            <td style="padding: 15px;">Name</td>
+            <td style="padding: 15px;">Check-Des</td>
+
+        </tr>
+        <tr *ngFor="let user of userResponse">
+            <td style="padding: 15px;">{{user.id}}</td>
+            <td style="padding: 15px;">{{user.name}}</td>
+            <td style="padding: 15px;"><button (click)="getRes(user.id)" id=[user.id] style="  background-color: rgb(19, 7, 75);
+                border: none; padding: 12px;
+                color: white;">Check Result</button></td>
+        </tr>
+
+    </table>
+</div>

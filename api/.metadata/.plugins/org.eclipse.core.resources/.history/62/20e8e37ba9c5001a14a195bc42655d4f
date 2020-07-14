@@ -1,0 +1,38 @@
+package com.project.quiz.model;
+
+public class ResUserQuesAns {
+
+	private String User;
+	private int QuesId[];
+	private int AnsId[];
+	public ResUserQuesAns(String user, int[] quesId, int[] ansId) {
+		super();
+		User = user;
+		QuesId = quesId;
+		AnsId = ansId;
+	}
+	public ResUserQuesAns() {
+		super();
+	}
+	public String getUser() {
+		return User;
+	}
+	public void setUser(String user) {
+		User = user;
+	}
+	public int[] getQuesId() {
+		return QuesId;
+	}
+	public void setQuesId(int[] quesId) {
+		QuesId = quesId;
+	}
+	public int[] getAnsId() {
+		return AnsId;
+	}
+	public void setAnsId(int[] ansId) {
+		AnsId = ansId;
+	}
+	
+	
+	
+}

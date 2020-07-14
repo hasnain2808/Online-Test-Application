@@ -1,0 +1,29 @@
+package com.project.quiz.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.project.quiz.service.QuizService;
+import com.project.quiz.model.Question;
+
+@RestController
+public class QuizController {
+	@Autowired
+	private QuizService service;	
+	@GetMapping("/quiz")
+	public ResponseEntity<List<Question>> getAllQuestions() {
+
+		try {
+		return service.getAllQuestions();}
+		catch (Exception e) {
+			System.out.println(e.getMessage());
+			map = new LinkedMultiValueMap<>();
+			map.add("message", e.getMessage()); 
+			return new ResponseEntity<List<Question>>(null, map, HttpStatus.NOT_FOUND);
+
+		}
+	}
+}

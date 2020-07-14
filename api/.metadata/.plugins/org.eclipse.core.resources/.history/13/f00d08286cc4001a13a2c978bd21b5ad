@@ -1,0 +1,29 @@
+package com.project.quiz.inititializer;
+
+import org.springframework.boot.CommandLineRunner;
+
+import com.project.quiz.dao.AnswerOptionDAO;
+import com.project.quiz.dao.QuestionDAO;
+import com.project.quiz.model.AnswerOption;
+import com.project.quiz.model.Question;
+
+public class QuestionAnswerInitializer implements CommandLineRunner {
+	private QuestionDAO questiondao;
+	private AnswerOptionDAO answeroptiondao;
+
+	public QuestionAnswerInitializer(QuestionDAO questiondao) {
+		super();
+		this.questiondao = questiondao;
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		Question question = new Question("What is the single responsibility principle");
+		questiondao.save(question);
+
+		AnswerOption answerOption1 = new AnswerOption("A module should be responsible to one, and only one, actor.", question);
+		answerOption1 = new AnswerOption("A module should be responsible to one, and only one, actor.", question);
+		answerOption1 = new AnswerOption("A module should be responsible to one, and only one, actor.", question);
+		answerOption1 = new AnswerOption("A module should be responsible to one, and only one, actor.", question);
+	}
+}

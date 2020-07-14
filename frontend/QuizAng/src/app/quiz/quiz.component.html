@@ -1,0 +1,27 @@
+<div>
+    <h3><u>Question List</u></h3>
+    Name: <input type="text" [(ngModel)]="name">
+    <table border="1px" style=" border-collapse: collapse;   border: 1px solid black;">
+        <tr>
+            <td>Id</td>
+            <td>question</td>
+            <td colspan="3">Answer </td>
+        </tr>
+        <tr *ngFor="let questionw of questions">
+            <td>{{questionw.id}}</td>
+            <td>{{questionw.question}}</td>
+            <td>
+                <table>
+                    <tr *ngFor="let ans of questionw.answerOption">
+                        <td><input type="radio" name={{questionw.id}} (change)="onSelectionChange(questionw,ans)"
+                                [checked]="questionw.correctAnswer">{{ans.answer}}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br><br>
+    <button (click)="checkAnswer()" style="  background-color: rgb(19, 7, 75);
+    border: none; padding: 12px;
+    color: white;">Submit Answer</button>
+</div>

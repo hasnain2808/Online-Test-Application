@@ -1,0 +1,87 @@
+package com.project.quiz.model;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+@Entity
+@Table
+public class AnswerOption {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	private String answer;
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	private Question question;
+	private boolean isAnswer;
+
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getAnswer() {
+		return answer;
+	}
+
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
+
+	public boolean isAnswer() {
+		return isAnswer;
+	}
+
+	public void setAnswer(boolean isAnswer) {
+		this.isAnswer = isAnswer;
+	}
+
+	@Override
+	public String toString() {
+		return "AnswerOption [id=" + id + ", answer=" + answer + ", isAnswer=" + isAnswer
+				+ "]";
+	}
+
+	public AnswerOption(String answer, Question question, boolean isAnswer) {
+		super();
+		this.answer = answer;
+		this.question = question;
+		this.isAnswer = isAnswer;
+	}
+
+	public AnswerOption() {
+		super();
+	}
+
+	public AnswerOption(int id, String answer, Question question, boolean isAnswer) {
+		super();
+		this.id = id;
+		this.answer = answer;
+		this.question = question;
+		this.isAnswer = isAnswer;
+	}
+
+	@JsonIgnore
+	public Question getQuestion() {
+		return question;
+	}
+
+	@JsonIgnore
+	public void setQuestion(Question question) {
+		this.question = question;
+	}
+
+}

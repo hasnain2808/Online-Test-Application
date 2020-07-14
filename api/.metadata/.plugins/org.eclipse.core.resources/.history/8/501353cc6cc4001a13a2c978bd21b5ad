@@ -1,0 +1,107 @@
+package com.project.quiz.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table
+public class Question {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int id;
+	private String question;
+	@OneToMany(mappedBy = "question")
+	List<AnswerOption> answerOption = new ArrayList<>();
+
+	public Question(int id, String question, List<AnswerOption> answerOption, AnswerOption correctAnswer) {
+		super();
+		this.id = id;
+		this.question = question;
+		this.answerOption = answerOption;
+	}
+
+	public Question(String question) {
+		super();
+		this.question = question;
+	}
+
+	public Question() {
+		super();
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+
+	public List<AnswerOption> getAnswerOption() {
+		return answerOption;
+	}
+
+	public void setAnswerOption(List<AnswerOption> answerOption) {
+		this.answerOption = answerOption;
+	}
+
+	@Override
+	public String toString() {
+		return "Question [id=" + id + ", question=" + question + ", answerOption=" + answerOption + ", getId()="
+				+ getId() + ", getQuestion()=" + getQuestion() + ", getAnswerOption()=" + getAnswerOption()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((answerOption == null) ? 0 : answerOption.hashCode());
+		result = prime * result + id;
+		result = prime * result + ((question == null) ? 0 : question.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Question other = (Question) obj;
+		if (answerOption == null) {
+			if (other.answerOption != null)
+				return false;
+		} else if (!answerOption.equals(other.answerOption))
+			return false;
+		if (id != other.id)
+			return false;
+		if (question == null) {
+			if (other.question != null)
+				return false;
+		} else if (!question.equals(other.question))
+			return false;
+		return true;
+	}
+
+}

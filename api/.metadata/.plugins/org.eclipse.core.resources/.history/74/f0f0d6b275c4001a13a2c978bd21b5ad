@@ -1,0 +1,19 @@
+package com.project.quiz.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.project.quiz.dao.QuestionDAO;
+import com.project.quiz.model.Question;
+import com.project.quiz.service.QuizService;
+
+@Service
+public class QuizServiceImpl implements QuizService {
+	@Autowired
+	private QuestionDAO dao;
+	public List<Question> getAllQuestions() {
+		return dao.findAll();
+	}
+}
